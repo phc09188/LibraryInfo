@@ -78,7 +78,13 @@ public class Register {
 
     public static String readUrl(int k) throws Exception {
         int start_idx = k;
-        String inputUrl = "http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=I1m%2FtyHkSf911tyeNIAXl%2BcZEqKhcNOPDVGzi%2BGuhQQqXEmyz65vMgPqe7TY5eiSQwNoUnI%2B2qOuFhXZ1v7K3g%3D%3D&pageNo="+start_idx+"&numOfRows=100&type=json";
+        String inputUrl;
+        if(k == 34){
+            inputUrl = "http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=I1m%2FtyHkSf911tyeNIAXl%2BcZEqKhcNOPDVGzi%2BGuhQQqXEmyz65vMgPqe7TY5eiSQwNoUnI%2B2qOuFhXZ1v7K3g%3D%3D&pageNo="+start_idx+"&numOfRows=85&type=json";
+
+        }else{
+            inputUrl = "http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=I1m%2FtyHkSf911tyeNIAXl%2BcZEqKhcNOPDVGzi%2BGuhQQqXEmyz65vMgPqe7TY5eiSQwNoUnI%2B2qOuFhXZ1v7K3g%3D%3D&pageNo="+start_idx+"&numOfRows=100&type=json";
+        }
         URL url = new URL(inputUrl);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");

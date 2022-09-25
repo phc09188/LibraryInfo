@@ -7,14 +7,14 @@
 <body>
 <h1>
     <div class = "search">
-        <button>
+        <a href = "/search.jsp">
             도서관 검색
-        </button>
+        </a>
     </div>
     <div class = "nearby">
-        <button>
+        <a href = "/nearby.jsp">
             가까운 도서관 검색
-        </button>
+        </a>
     </div>
 </h1>
 <br/>
