@@ -37,8 +37,9 @@
         <tr class = "header">
             <th>시/도</th>
             <th>시/군/구</th>
-            <th>도서관 이름</th>
+            <th>도서관 이름(클릭 = 세부정보)</th>
             <th>도서관 분류</th>
+            <th>홈페이지 바로가기</th>
         </tr>
     </thread>
     <tbody>
@@ -57,8 +58,20 @@
         <TR ID = "search_Library_list">
             <td><%=lib.getCtprvnNm()%></td>
             <Td><%=lib.getSignguNm()%></Td>
-            <td><%=lib.getLbrryNm()%></td>
+            <td><a href="/info.jsp?name=<%=lib.getLbrryNm()%>"><%=lib.getLbrryNm()%></a></td>
             <td><%=lib.getLbrrySe()%></td>
+            <td><%
+                if(lib.getHomepageUrl().equals("")){
+            %>
+                홈페이지가 없습니다.
+                <%
+                    }else{
+                %>
+                <a href="<%=lib.getHomepageUrl()%>">홈페이지 바로가기</a>
+                    <%
+                        }
+                    %>
+            </td>
         </TR>
     <%
             }
